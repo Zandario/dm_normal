@@ -3,4 +3,4 @@
 *.lk
 *.rsc
 /output/**/*
-!/output/ico.dmi
+!/output/_output.dmi

@@ -24,9 +24,9 @@ var/output_folder = "[DM_VERSION]/output"
 	/// Our render data is stored in a datum, so we can just call its render verb.
 	var/datum/render_data/render_data = new /datum/render_data/stairs
 
-	// if(fexists("output/ico.dmi"))
-	// 	src << "Deleting old ico.dmi!"
-	// 	fdel("output/ico.dmi")
+	// if(fexists("output/_output.dmi"))
+	// 	src << "Deleting old _output.dmi!"
+	// 	fdel("output/_output.dmi")
 
 	// Create a blank icon to store icons into.
 	var/icon/ico = new
@@ -164,8 +164,8 @@ var/output_folder = "[DM_VERSION]/output"
 
 	//# Write the sample images.
 
-	src << "Writing ico.dmi!"
-	fcopy(ico, "output/ico.dmi")
+	src << "Writing _output.dmi!"
+	fcopy(ico, "output/_output.dmi")
 
 	var/list/icon/states = ico.IconStates()
 	src << "List is [length(states)] long!"
