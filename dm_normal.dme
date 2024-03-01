@@ -7,13 +7,11 @@
 
 // BEGIN_FILE_DIR
 #define FILE_DIR .
-#define FILE_DIR "art"
-#define FILE_DIR "samples"
 // END_FILE_DIR
 
 // BEGIN_PREFERENCES
 // END_PREFERENCES
 
 // BEGIN_INCLUDE
-#include "scripts\normal\normal.dm"
+#include "code\normal.dm"
 // END_INCLUDE
