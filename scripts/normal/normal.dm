@@ -145,7 +145,6 @@
 	ico.Insert(render, "render_reduced")
 
 	// Write the sample images.
-	fcopy(ico, "out/ico.png")
 	fcopy(ico, "out/ico.dmi")
 	var/states[] = ico.IconStates()
 	for(var/state in states)
