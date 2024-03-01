@@ -2,3 +2,5 @@
 *.int
 *.lk
 *.rsc
+/output/**/*
+!/output/ico.dmi

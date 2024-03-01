@@ -16,7 +16,7 @@ var/output_folder = "[DM_VERSION]/output"
 /datum/render_data/stairs
 	diffuse_map = icon('icons/stairs.dmi', "diffuse")
 	normal_map  = icon('icons/stairs.dmi', "normal")
-	light_map   = icon('icons/stairs.dmi', "")
+	light_map   = icon('icons/stairs.dmi', "light")
 
 
 /client/verb/Render()
@@ -24,9 +24,9 @@ var/output_folder = "[DM_VERSION]/output"
 	/// Our render data is stored in a datum, so we can just call its render verb.
 	var/datum/render_data/render_data = new /datum/render_data/stairs
 
-	if(fexists("output/ico.dmi"))
-		src << "Deleting old ico.dmi!"
-		fdel("output/ico.dmi")
+	// if(fexists("output/ico.dmi"))
+	// 	src << "Deleting old ico.dmi!"
+	// 	fdel("output/ico.dmi")
 
 	// Create a blank icon to store icons into.
 	var/icon/ico = new
@@ -173,15 +173,7 @@ var/output_folder = "[DM_VERSION]/output"
 	if(length(states))
 		for(var/state in states)
 			src << "Found state [state]!"
-			var/file_name = "output/[state].png"
-			if(fexists(file_name))
-				src << "Backing up old sample [state]!"
-				fcopy(file_name, "output/backup/[state].png")
-				fdel(file_name)
-				src << "Deleted old sample [state]!"
-
-			fcopy(icon(ico, state), file_name)
-			src << "Wrote sample [state]!"
+			fcopy(icon(ico, state), "output/[state].png")
 
 		src << "FINISHED RENDER!"
 	else
